@@ -3,6 +3,7 @@ import 'package:animation_app/screens/explicit/positioned_transtion_screen.dart'
 import 'package:flutter/material.dart';
 
 import 'screens/explicit/fade_transtion_screen.dart';
+import 'screens/explicit/indexed_stack_transtion_screen.dart';
 import 'screens/explicit/positioned_dirctional_transtion_screen.dart';
 import 'screens/explicit/rotation_transtion_screen.dart';
 import 'screens/explicit/size_transtion_screen.dart';
@@ -374,6 +375,24 @@ class MyHomePage extends StatelessWidget {
             },
             child: const Text(
               "Text Style Transtion",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          MaterialButton(
+            color: Colors.pinkAccent,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const IndexedStackTranstionScreen(),
+                ),
+              );
+            },
+            child: const Text(
+              "Indexed Stack Transtion",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
