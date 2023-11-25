@@ -1,5 +1,7 @@
 import 'package:animation_app/screens/explicit/animated_builder_screen.dart';
 import 'package:animation_app/screens/explicit/positioned_transtion_screen.dart';
+import 'package:animation_app/screens/page_transtion/mix_fade_size_transtion.dart';
+import 'package:animation_app/screens/page_two.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/explicit/fade_transtion_screen.dart';
@@ -20,6 +22,12 @@ import 'screens/implicit/animated_physical_screen.dart';
 import 'screens/implicit/animated_positioned_dirctional_screen.dart';
 import 'screens/implicit/animated_positioned_screen.dart';
 import 'screens/implicit/animated_text_screen.dart';
+import 'screens/page_transtion/fade_transtion.dart';
+import 'screens/page_transtion/mix_scale_rotate_transtion.dart';
+import 'screens/page_transtion/rotation_transtion.dart';
+import 'screens/page_transtion/scale_transtion.dart';
+import 'screens/page_transtion/size_transtion.dart';
+import 'screens/page_transtion/slide_transtion.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -37,6 +45,7 @@ class MyHomePage extends StatelessWidget {
           horizontal: MediaQuery.of(context).size.width / 10,
         ),
         children: [
+          // implicit animation
           MaterialButton(
             color: Colors.blueGrey,
             onPressed: () {
@@ -236,6 +245,8 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
           ),
+
+          // explicit animation
           MaterialButton(
             color: Colors.pinkAccent,
             onPressed: () {
@@ -398,6 +409,126 @@ class MyHomePage extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
+          ),
+          // page transtion
+          MaterialButton(
+            color: Colors.black,
+            onPressed: () {
+              Navigator.of(context).push(
+                FadeTranstion(page: const PageTwo()),
+              );
+            },
+            child: const Text(
+              "Fade Page transtion",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          MaterialButton(
+            color: Colors.black,
+            onPressed: () {
+              Navigator.of(context).push(ScaleTranstion(page: const PageTwo()));
+            },
+            child: const Text(
+              "Scale Page transtion",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          MaterialButton(
+            color: Colors.black,
+            onPressed: () {
+              Navigator.of(context).push(
+                RotationTranstion(
+                  page: const PageTwo(),
+                ),
+              );
+            },
+            child: const Text(
+              "Rotation Page transtion",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          MaterialButton(
+            color: Colors.black,
+            onPressed: () {
+              Navigator.of(context).push(
+                SlideTranstion(
+                  page: const PageTwo(),
+                ),
+              );
+            },
+            child: const Text(
+              "Slide Page transtion",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          MaterialButton(
+            color: Colors.black,
+            onPressed: () {
+              Navigator.of(context).push(
+                SizeTranstion(
+                  page: const PageTwo(),
+                ),
+              );
+            },
+            child: const Text(
+              "Size Page transtion",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          MaterialButton(
+            color: Colors.black,
+            onPressed: () {
+              Navigator.of(context).push(
+                MixFadeSizeTranstion(
+                  page: const PageTwo(),
+                ),
+              );
+            },
+            child: const Text(
+              "Mix Fade And Size Page transtion",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          MaterialButton(
+            color: Colors.black,
+            onPressed: () {
+              Navigator.of(context).push(
+                MixScaleRotateTranstion(
+                  page: const PageTwo(),
+                ),
+              );
+            },
+            child: const Text(
+              "Mix Scale And Rotate Page transtion",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
           ),
         ],
       ),
